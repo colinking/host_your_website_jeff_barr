@@ -3,4 +3,5 @@ extends ../layout
 block content
   ul
     for bucket in buckets
-      li= bucket
+      li
+        a(href=`/chapter_04/buckets/${bucket}/objects`)= bucket
