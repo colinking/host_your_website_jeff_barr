@@ -28,10 +28,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/chapter_04', chapter04);
-// app.get('/chapter_:chapterNumber/:example', (req, res) => {
-//   console.log(req.params.chapterNumber);
-//   console.log(req.params.example);
-// });
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
