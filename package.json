@@ -1,11 +1,21 @@
 {
+  "name": "host_your_website_jeff_barr",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
   "dependencies": {
     "async": "^2.1.4",
     "aws-sdk": "^2.7.21",
+    "body-parser": "^1.15.2",
     "eslint": "^3.13.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "node-sass-middleware": "^0.10.1",
+    "pug": "^2.0.0-beta6"
   }
 }
