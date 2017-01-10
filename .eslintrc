@@ -2,6 +2,9 @@
 // Copy this file, and add rule overrides as needed.
 {
   "extends": "airbnb",
+  "plugins": [
+    "pug"
+  ],
   "rules": {
     "no-console": "off",
     "comma-dangle": "off"

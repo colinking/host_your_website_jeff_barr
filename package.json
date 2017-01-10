@@ -12,10 +12,12 @@
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-pug": "^1.0.0",
     "eslint-plugin-react": "^6.9.0",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "node-sass-middleware": "^0.10.1",
+    "numeral": "^2.0.4",
     "pug": "^2.0.0-beta6"
   }
 }

@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  p A simple HTML table displaying all of the objects in the '#{bucketName}' bucket.
+  table.table
+    thead
+      tr
+        th File
+        th Size
+    tbody
+      for file in fileList
+        tr
+          td
+            a(href=file.url)= file.name
+          td= file.size
