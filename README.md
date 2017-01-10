@@ -2,6 +2,7 @@
 
 Node.js/Express code samples for working with AWS. Based on the PHP samples from Jeff Barr's book.
 
+The Node.js AWS SDK documentation is available [here](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/index.html).
 
 ### Setup
 
