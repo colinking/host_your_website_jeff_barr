@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "async": "^2.1.4",
     "aws-sdk": "^2.7.21",
     "eslint": "^3.13.1",
     "eslint-config-airbnb": "^14.0.0",

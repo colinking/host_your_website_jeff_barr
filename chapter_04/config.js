@@ -1,2 +1,2 @@
 
-module.exports.BOOK_BUCKET = 'colinking-aws-cloud-book';
+module.exports.DEFAULT_BUCKET = 'colinking-aws-cloud-book';

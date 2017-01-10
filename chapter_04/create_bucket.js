@@ -6,7 +6,7 @@ if (process.argv.length < 2 || process.argv.length > 3) {
   process.exit(1);
 }
 
-const bucketName = (process.argv.length === 2 ? config.BOOK_BUCKET : process.argv[2]);
+const bucketName = (process.argv.length === 2 ? config.DEFAULT_BUCKET : process.argv[2]);
 
 const s3 = new AWS.S3();
 
