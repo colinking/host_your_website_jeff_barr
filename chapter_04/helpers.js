@@ -41,3 +41,5 @@ module.exports.getBucketObjects = (s3, options, callback) => {
     }
   );
 };
+
+module.exports.getObjectURL = (bucket, key) => `https://${bucket}.s3.amazonaws.com/${key}`;
