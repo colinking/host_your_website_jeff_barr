@@ -1,5 +1,6 @@
 
 const async = require('async');
+const mime = require('mime');
 const config = require('./config');
 
 module.exports.getBucketObjects = (s3, options, callback) => {
@@ -46,7 +47,7 @@ module.exports.getObjectURL = (bucket, key) => `https://${bucket}.s3.amazonaws.c
 
 module.exports.uploadObject = (s3, bucketName, key, data, options, callback) => {
   const acl = options.acl || 'private';
-  const contentType = options.contentType || 'text/plain';
+  const contentType = options.contentType || mime.lookup(key) || 'text/plain';
   // Attempt the upload up to six times with exponential backoff before failing
   async.retry(
     // options

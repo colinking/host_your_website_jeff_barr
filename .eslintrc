@@ -7,6 +7,7 @@
   ],
   "rules": {
     "no-console": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+     "no-shadow": [2, {"allow": ["err"]}]
   }
 }
