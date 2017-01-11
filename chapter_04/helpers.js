@@ -43,8 +43,6 @@ module.exports.getBucketObjects = (s3, options, callback) => {
   );
 };
 
-module.exports.getObjectURL = (bucket, key) => `https://${bucket}.s3.amazonaws.com/${key}`;
-
 module.exports.uploadObject = (s3, bucketName, key, data, options, callback) => {
   const acl = options.acl || 'private';
   const contentType = options.contentType || mime.lookup(key) || 'text/plain';
@@ -72,11 +70,24 @@ module.exports.uploadObject = (s3, bucketName, key, data, options, callback) => 
     // callback
     (err, resp) => {
       if (err) {
-        console.error(`Error uploading object to: ${module.exports.getObjectURL(bucketName, key)}`);
+        console.error(`Error uploading object for bucket ${bucketName} and key ${key}`);
         callback(err);
       } else {
         callback(err, resp);
       }
     }
   );
+};
+
+module.exports.findDistributionForBucket = (cf, bucketName, callback) => {
+  cf.listDistributions({}, (err, distributions) => {
+    if (err) {
+      callback(err);
+    } else {
+      async.detect(distributions.DistributionList.Items,
+        (distribution, cb) =>
+          cb(null, distribution.Origins.Items[0].DomainName.startsWith(`${bucketName}.`)),
+        callback);
+    }
+  });
 };

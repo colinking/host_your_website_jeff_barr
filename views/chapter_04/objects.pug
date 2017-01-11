@@ -10,6 +10,10 @@ block content
     tbody
       for file in fileList
         tr
+          td(style='width: 200px;')
+            if file.thumb
+              a(href=file.thumb)
+                img(src=file.thumb)
           td
             a(href=file.url)= file.name
           td= file.size
