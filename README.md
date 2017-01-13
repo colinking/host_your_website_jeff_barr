@@ -6,10 +6,4 @@ The Node.js AWS SDK documentation is available [here](http://docs.aws.amazon.com
 
 ### Setup
 
-Create an IAM user on AWS and store the access keys in `~/.aws/credentials`.
-
-```
-[default]
-aws_access_key_id = your_access_key
-aws_secret_access_key = your_secret_key
-```
+Install the [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and run `aws configure` to set your access keys and default region.
