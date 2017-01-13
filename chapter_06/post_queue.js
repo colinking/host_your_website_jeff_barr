@@ -17,7 +17,7 @@ const messages = argv._.slice(1);
 async.each(messages, (message, cb) => {
   sqs.sendMessage({
     QueueUrl: queueUrl,
-    MessageBody: message
+    MessageBody: String(message)
   }, (err) => {
     if (!err) {
       console.log(`Posted '${message}' to queue URL ${queueUrl}.`);
