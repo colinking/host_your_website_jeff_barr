@@ -31,7 +31,7 @@ function storeHTMLtoS3(url, callback) {
       console.log(`Retrieved ${body.length} bytes of HTML.`);
       const md5 = crypto.createHash('md5').update(url).digest('hex');
       const key = `page_${md5}.html`;
-      s3helpers.uploadObject(s3, s3config.DEFAULT_BUCKET, key, body, {}, (err, resp) => {
+      s3helpers.uploadObject(s3, s3config.DEFAULT_BUCKET, key, body, { acl: 'public-read' }, (err, resp) => {
         if (err) callback(err);
         else {
           console.log(`Uploaded page to S3 as '${key}'`);
