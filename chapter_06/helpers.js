@@ -14,7 +14,7 @@ module.exports.pullMessage = (sqs, queueURL, callback) => {
       MaxNumberOfMessages: 1
     }, (err, data) => {
       if (err) cb(err);
-      else if (data.Messages.length === 0) setTimeout(cb, 1000);
+      else if (!data.Messages || data.Messages.length === 0) setTimeout(cb, 1000);
       else {
         const message = data.Messages[0];
         cb(null, {
