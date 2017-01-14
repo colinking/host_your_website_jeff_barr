@@ -17,6 +17,7 @@ const sqs = new AWS.SQS();
 helpers.findQueueURL(sqs, config.URL_QUEUE, (err, queueURL) => {
   async.each(urls, (url, cb) => {
     const message = {
+      action: 'FetchPage',
       origin: 'load_crawl_urls.js',
       data: url,
       history: [`Posted by load_crawl_urls.js on ${(new Date()).toISOString()}`]
