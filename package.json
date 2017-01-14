@@ -22,6 +22,7 @@
     "node-sass-middleware": "^0.10.1",
     "numeral": "^2.0.4",
     "pug": "^2.0.0-beta6",
+    "request": "^2.79.0",
     "sharp": "^0.17.0"
   }
 }
